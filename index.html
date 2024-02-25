@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundraising Template</title>
+    <link rel="icon" href="./image/logo_transparent.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/all.min.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- start header -->
+      <header>
+        <div class="logo"><a href="">logo</a></div>
+        <div @click="menu" :class="menuOpen ? 'menu active' : 'menu' ">
+          <span class="menu-span"></span>
+          <span class="menu-span"></span>
+          <span class="menu-span"></span>
+        </div>
+        <div :class="menuOpen? 'sidebar active': 'sidebar' ">
+          <ul>
+            <li><a href="">home</a></li>
+          </ul>
+        </div>
+      </header>
+      <!-- end header -->
+
+      <!-- start landing -->
+      <div class="landing"></div>
+      <!-- end landing -->
+      <div class="boxs-landing">
+        <div class="box">
+          <h2>Accounting & Tax</h2>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate
+          </p>
+          <a href="#">read more</a>
+        </div>
+        <div class="box">
+          <h2>Business Planning</h2>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse
+          </p>
+          <a href="#">read more</a>
+        </div>
+        <div class="box">
+          <h2>Employment Issues</h2>
+          <p>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate
+          </p>
+          <a href="#">read more</a>
+        </div>
+      </div>
+      <!-- start man photo -->
+      <div class="man-photo">
+        <div class="container">
+          <div class="image">
+            <img src="./image/man.jpg" alt="man-image" />
+          </div>
+          <!-- <div class="boxs"> -->
+          <div class="box-1">
+            <div class="box">
+              <h2>Consulting firm</h2>
+              <p>
+                Sample text. Click to select the text box. Click again or double
+                click to start editing the text.
+              </p>
+            </div>
+            <p class="under-p">
+              Article evident arrived express highest men did boy. Mistress
+              sensible entirely am so. Quick can manor smart money hopes worth
+              too. Comfort produce husband boy her had hearing.
+            </p>
+          </div>
+          <div class="box-2">
+            <p class="upper-p">
+              Article evident arrived express highest men did boy. Mistress
+              sensible entirely am so. Quick can manor smart money hopes worth
+              too. Comfort produce husband boy her had hearing.
+            </p>
+            <div class="box">
+              <h2>about us</h2>
+              <p>
+                Sample text. Click to select the text box. Click again or double
+                click to start editing the text.
+              </p>
+            </div>
+            <!-- </div> -->
+          </div>
+        </div>
+      </div>
+      <!-- end man photo -->
+
+      <!-- start cards -->
+      <div ref="cards" class="cards">
+        <div class="container">
+          <h2>we'll help manage your Business</h2>
+          <div ref="boxs_card" class="boxs" style="position: absolute">
+            <div
+              v-for="card in cards"
+              :key="card.id"
+              class="box"
+              :style="{ backgroundColor: card.background, left: card.position, opacity:card.opacity, position: card.positionR_A }"
+            >
+              <h3 :style="{ color: card.color }">{{card.h3}}</h3>
+              <i :style="{ color: card.color }" :class="card.icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end cards -->
+
+      <!-- start communication -->
+      <div class="communication">
+        <div ref="communication" class="container">
+          <div class="images">
+            <div class="bulid-image">
+              <img src="./image/bulid.jpg" alt="bulid" />
+            </div>
+            <div class="imgs-bottom">
+              <div class="img-left">
+                <img src="./image/manTeamWork1 (1).jpeg" alt="" />
+                <h2>
+                  business <br />
+                  communication
+                </h2>
+                <p>
+                  Venenatis cras sed felis eget velit aliquet sagittis id
+                  consectetur. Quis enim lobortis scelerisque fermentum. Tortor
+                  pretium viverra suspendisse potenti nullam.
+                </p>
+                <a href="#">read more</a>
+              </div>
+              <div class="img-right">
+                <img src="./image/manTeamWork2.jpeg" alt="" />
+                <p>
+                  Vulputate enim nulla aliquet porttitor lacus luctus accumsan
+                  tortor posuere. Felis donec et odio pellentesque diam volutpat
+                  commodo sed egestas. Quisque id diam vel quam elementum
+                  pulvinar etiam. Turpis nunc eget lorem dolor sed viverra.
+                  Luctus accumsan tortor posuere ac ut. Praesent tristique magna
+                  sit amet purus. Ut porttitor leo a diam.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end communication -->
+
+      <!-- start about us -->
+      <div class="about-us">
+        <div
+          data-number_1="50"
+          data-number_2="99"
+          ref="about_us"
+          class="container"
+        >
+          <div class="left-side">
+            <h3>about us</h3>
+            <h2>We are the best agency to improve your deals</h2>
+            <p>
+              We work directly for our clients and put client’s interests first.
+            </p>
+          </div>
+          <div class="right-side">
+            <p>
+              Everything that can be necessary to create and manage new projects
+              (startups) in modern conditions. From development of concept,
+              business plan and project management plan, to marketing strategy
+              and tactics, as well as the system of customer attraction via the
+              Internet and sales system.
+            </p>
+            <div class="numbers-box">
+              <div class="number">
+                <h2 data-number="50"><span ref="number1">0</span>%</h2>
+                <p>
+                  Sample text. Click to select the text box. Click again or
+                  double click to start editing the text.
+                </p>
+              </div>
+              <div class="number">
+                <h2 data-number="99"><span ref="number2">0</span>%</h2>
+                <p>
+                  Sample text. Click to select the text box. Click again or
+                  double click to start editing the text.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end about us -->
+
+      <!-- start Leadership -->
+      <div class="leadership">
+        <div class="container">
+          <div class="title">
+            <h2>Understanding Leadership</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua enim.
+              Images from
+            </p>
+          </div>
+          <div class="boxs">
+            <div class="box">
+              <h3>good leaders</h3>
+              <div class="image">
+                <img src="./image/Leadership_1.jpg" alt="" />
+              </div>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident.
+              </p>
+              <a href="#">learn more</a>
+            </div>
+            <div class="box">
+              <h3>good leaders</h3>
+              <div class="image">
+                <img src="./image/Leadership2.jpg" alt="" />
+              </div>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident.
+              </p>
+              <a href="#">learn more</a>
+            </div>
+            <div class="box">
+              <h3>good leaders</h3>
+              <div class="image">
+                <img src="./image/Leadership_1.jpg" alt="" />
+              </div>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident.
+              </p>
+              <a href="#">learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end Leadership -->
+
+      <!-- start advice -->
+      <div class="advice">
+        <div class="container">
+          <div class="main-img">
+            <img src="./image/manTeamWork2.jpeg" alt="" />
+          </div>
+          <div class="boxs">
+            <div class="box" style="background-color: #627dbf">
+              <div class="number">01</div>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum. Ut enim ad minim veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.
+              </p>
+            </div>
+            <div class="box" style="background-color: #33c1ea">
+              <div class="number">02</div>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum. Ut enim ad minim veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.
+              </p>
+            </div>
+            <div class="box" style="background-color: #37acc5">
+              <div class="number">03</div>
+              <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum. Ut enim ad minim veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end advice -->
+
+      <!-- start contact -->
+      <div class="contact">
+        <div class="container">
+          <div class="text">
+            <h2>Small Pricing Plan For Your Creative Business</h2>
+            <p>
+              Article evident arrived express highest men did boy. Mistress
+              sensible entirely am so. Quick can manor smart money hopes worth
+              too. Comfort produce husband boy her had hearing. Law others
+              theirs passed but wishes. You day real less till dear read.
+              Considered use dispatched melancholy sympathize discretion led.
+            </p>
+            <p>
+              Oh feel if up to till like. He an thing rapid these after going
+              drawn or. Timed she his law the spoil round defer. In surprise
+              concerns informed betrayed he learning is ye.
+            </p>
+            <a href="#">read more</a>
+          </div>
+          <form action="">
+            <h2>Get started with a free quotation</h2>
+            <div class="inputs">
+              <div class="input">
+                <label for="name">name</label>
+                <input
+                  id="name"
+                  required
+                  class="input-textArea"
+                  type="text"
+                  placeholder="enter your name"
+                  name="name"
+                />
+              </div>
+              <div class="input">
+                <label for="email">email</label>
+                <input
+                  id="email"
+                  required
+                  class="input-textArea"
+                  type="email"
+                  placeholder="enter a valid email address"
+                  name="email"
+                />
+              </div>
+              <div class="input">
+                <label for="message">message</label>
+                <textarea
+                  id="message"
+                  required
+                  class="input-textArea"
+                  placeholder="enter your message"
+                  name="message"
+                ></textarea>
+              </div>
+              <div class="checkbox">
+                <input id="checkbox" type="checkbox" />
+                <label for="checkbox">i accept the Terms Of Service</label>
+              </div>
+              <input type="submit" value="submit your request" />
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- end contact -->
+
+      <!-- start footer -->
+      <footer>
+        <p>created with <span>love</span> by <span>omar adel</span></p>
+        <div>
+          <p>My Portfolio :</p>
+          <a target="_blank" href="https://omaradel376.github.io/my-portfolio/"
+            >click to visit</a
+          >
+        </div>
+      </footer>
+      <!-- end footer -->
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+      let vm = new Vue({
+        el: "#app",
+        data: {
+          menuOpen: false,
+          cards: [
+            {
+              h3: "ANTI-CRISIS",
+              icon: "fa-solid fa-money-bill-trend-up",
+              id: 0,
+              color: "#ffffff",
+              background: "#627dbf",
+              position: "50%",
+              opacity: "0",
+              positionR_A: "absolute",
+            },
+            {
+              h3: "STARTUPS",
+              icon: "fa-solid fa-rocket",
+              id: 1,
+              color: "#111111",
+              background: "#eee",
+              position: "-50%",
+              opacity: "0",
+              positionR_A: "absolute",
+            },
+            {
+              h3: "MARKETING",
+              icon: "fa-solid fa-bullhorn",
+              id: 2,
+              color: "#ffffff",
+              background: "#33c1ea",
+              position: "50%",
+              opacity: "0",
+              positionR_A: "absolute",
+            },
+            {
+              h3: "CONSULTATIONS",
+              icon: "fa-solid fa-coins",
+              id: 3,
+              color: "#111111",
+              background: "#eee",
+              position: "-50%",
+              opacity: "0",
+              positionR_A: "absolute",
+            },
+            {
+              h3: "STRATEGY",
+              icon: "fa-solid fa-chess-knight",
+              id: 4,
+              color: "#111111",
+              background: "#37acc5",
+              position: "50%",
+              opacity: "0",
+              positionR_A: "absolute",
+            },
+            {
+              h3: "INVESTMENT",
+              icon: "fa-solid fa-circle-dollar-to-slot",
+              id: 5,
+              color: "#111111",
+              background: "#eee",
+              position: "-50%",
+              opacity: "0",
+              positionR_A: "absolute",
+            },
+          ],
+          startCount: false,
+          number_1: 0,
+          number_2: 0,
+          max_number_1: 50,
+          max_number_2: 99,
+        },
+        methods: {
+          menu() {
+            this.menuOpen = !this.menuOpen;
+          },
+        },
+        mounted() {
+          let startCount = false;
+          function start(el_1, number_1, number_2) {
+            if (window.scrollY >= el_1.offsetTop - 500) {
+              let count1 = setInterval(() => {
+                number_1.textContent++;
+                if (number_1.textContent == el_1.dataset.number_1) {
+                  clearInterval(count1);
+                }
+              }, 5000 / el_1.dataset.number_1);
+              let count2 = setInterval(() => {
+                number_2.textContent++;
+                if (number_2.textContent == el_1.dataset.number_2) {
+                  clearInterval(count2);
+                }
+              }, 5000 / el_1.dataset.number_2);
+              startCount = true;
+            }
+          }
+          window.addEventListener("scroll", () => {
+            if (window.scrollY >= this.$refs.cards.offsetTop - 200) {
+              for (let i = 0; i < this.cards.length; i++) {
+                this.cards[i].position = 0;
+                this.cards[i].opacity = 1;
+                this.cards[i].positionR_A = "relative";
+                this.$refs.boxs_card.style.position = "relative";
+              }
+            }
+            if (window.scrollY >= this.$refs.communication.offsetTop - 500) {
+              this.$refs.communication.style.left = 0;
+              this.$refs.communication.style.position = "relative";
+              this.$refs.communication.style.transform = "rotate(0)";
+            }
+            if (!startCount) {
+              start(
+                this.$refs.about_us,
+                this.$refs.number1,
+                this.$refs.number2
+              );
+            }
+          });
+          document.addEventListener("click", (e) => {
+            if (this.menuOpen) {
+              if (
+                !e.target.classList.contains("sidebar") &&
+                !e.target.classList.contains("menu") &&
+                !e.target.classList.contains("menu-span")
+              ) {
+                this.menuOpen = false;
+              }
+            }
+          });
+        },
+      });
+    </script>
+  </body>
+</html>
